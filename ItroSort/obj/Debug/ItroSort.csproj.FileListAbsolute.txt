@@ -1,0 +1,8 @@
+c:\users\admin\documents\visual studio 2013\Projects\ItroSort\ItroSort\bin\Debug\ItroSort.exe.config
+c:\users\admin\documents\visual studio 2013\Projects\ItroSort\ItroSort\bin\Debug\ItroSort.exe
+c:\users\admin\documents\visual studio 2013\Projects\ItroSort\ItroSort\bin\Debug\ItroSort.pdb
+c:\users\admin\documents\visual studio 2013\Projects\ItroSort\ItroSort\obj\Debug\ItroSort.csprojResolveAssemblyReference.cache
+c:\users\admin\documents\visual studio 2013\Projects\ItroSort\ItroSort\obj\Debug\ItroSort.Properties.Resources.resources
+c:\users\admin\documents\visual studio 2013\Projects\ItroSort\ItroSort\obj\Debug\ItroSort.csproj.GenerateResource.Cache
+c:\users\admin\documents\visual studio 2013\Projects\ItroSort\ItroSort\obj\Debug\ItroSort.exe
+c:\users\admin\documents\visual studio 2013\Projects\ItroSort\ItroSort\obj\Debug\ItroSort.pdb

@@ -1,0 +1,5 @@
+c:\Users\Admin\documents\visual studio 2013\Projects\ItroSort\IntroSortLib\obj\Debug\IntroSortLib.csprojResolveAssemblyReference.cache
+c:\Users\Admin\documents\visual studio 2013\Projects\ItroSort\IntroSortLib\bin\Debug\IntroSortLib.dll
+c:\Users\Admin\documents\visual studio 2013\Projects\ItroSort\IntroSortLib\bin\Debug\IntroSortLib.pdb
+c:\Users\Admin\documents\visual studio 2013\Projects\ItroSort\IntroSortLib\obj\Debug\IntroSortLib.dll
+c:\Users\Admin\documents\visual studio 2013\Projects\ItroSort\IntroSortLib\obj\Debug\IntroSortLib.pdb
