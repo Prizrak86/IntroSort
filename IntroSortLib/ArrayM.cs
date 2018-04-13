@@ -14,6 +14,6 @@ namespace IntroSortLib
             get { return mass[ind]; }
             set { mass[ind] = value; }
         }
-
+        public int Length { get { return mass.Length; } }
     }
 }
