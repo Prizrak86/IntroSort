@@ -42,16 +42,16 @@ namespace IntroSortLib
 
         public void PyramidalSorting()
         {
-            PyramidalSorting(0, ArrayM.Length - 1);
+            PyramidalSorting(0, ArrayM.Length-1);
         }
         private void PyramidalSorting(int left, int right)
         {
-            int len = ArrayM.Length;
+            int len = right-left+1;
             //step 1: построение пирамиды
             for (int i = len / 2 - 1; i >= 0; --i)
             {
                 int prev_i = i;
-                i = add2pyramid(i, len);
+                i = add2pyramid(left, i, len);
                 if (prev_i != i) ++i;
                 
             }
@@ -60,33 +60,33 @@ namespace IntroSortLib
             int buf;
             for (int k = len - 1; k > 0; --k)
             {
-                buf = ArrayM[0];
-                ArrayM[0] = ArrayM[k];
-                ArrayM[k] = buf;
+                buf = ArrayM[left];
+                ArrayM[left] = ArrayM[left+k];
+                ArrayM[left + k] = buf;
                 int i = 0, prev_i = -1;
                 while (i != prev_i)
                 {
                     prev_i = i;
-                    i = add2pyramid(i, k);
+                    i = add2pyramid(left,i, k);
                 }
             }
         }
-        int add2pyramid(int i, int N)
+        int add2pyramid(int left, int i, int N)
         {
             int imax;
             int buf;
             if ((2 * i + 2) < N)
             {
-                if (ArrayM[2 * i + 1] < ArrayM[2 * i + 2]) imax = 2 * i + 2;
+                if (ArrayM[2 * i + 1 + left] < ArrayM[2 * i + 2 + left]) imax = 2 * i + 2;
                 else imax = 2 * i + 1;
             }
-            else imax = 2 * i + 1;
+            else imax = 2 * i + 1 ;
             if (imax >= N) return i;
-            if (ArrayM[i] < ArrayM[imax])
+            if (ArrayM[i + left] < ArrayM[imax + left])
             {
-                buf = ArrayM[i];
-                ArrayM[i] = ArrayM[imax];
-                ArrayM[imax] = buf;
+                buf = ArrayM[i + left];
+                ArrayM[i + left] = ArrayM[imax + left];
+                ArrayM[imax + left] = buf;
                 if (imax < N / 2) i = imax;
             }
             return i;
