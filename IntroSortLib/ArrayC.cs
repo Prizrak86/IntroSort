@@ -42,7 +42,6 @@ namespace IntroSortLib
 
         public void PyramidalSorting()
         {
-           
             PyramidalSorting(0, ArrayM.Length - 1);
         }
         private void PyramidalSorting(int left, int right)
