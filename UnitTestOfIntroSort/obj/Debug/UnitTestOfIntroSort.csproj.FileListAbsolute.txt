@@ -1,7 +1,0 @@
-c:\Users\Admin\documents\visual studio 2013\Projects\ItroSort\UnitTestOfIntroSort\obj\Debug\UnitTestOfIntroSort.csprojResolveAssemblyReference.cache
-c:\Users\Admin\documents\visual studio 2013\Projects\ItroSort\UnitTestOfIntroSort\bin\Debug\UnitTestOfIntroSort.dll
-c:\Users\Admin\documents\visual studio 2013\Projects\ItroSort\UnitTestOfIntroSort\bin\Debug\UnitTestOfIntroSort.pdb
-c:\Users\Admin\documents\visual studio 2013\Projects\ItroSort\UnitTestOfIntroSort\bin\Debug\IntroSortLib.dll
-c:\Users\Admin\documents\visual studio 2013\Projects\ItroSort\UnitTestOfIntroSort\bin\Debug\IntroSortLib.pdb
-c:\Users\Admin\documents\visual studio 2013\Projects\ItroSort\UnitTestOfIntroSort\obj\Debug\UnitTestOfIntroSort.dll
-c:\Users\Admin\documents\visual studio 2013\Projects\ItroSort\UnitTestOfIntroSort\obj\Debug\UnitTestOfIntroSort.pdb

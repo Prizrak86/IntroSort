@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace IntroSortLib
 {
@@ -46,9 +42,51 @@ namespace IntroSortLib
 
         public void PyramidalSorting()
         {
-            throw new NotImplementedException();
-        }
+            int len = ArrayM.Length;
+            //step 1: построение пирамиды
+            for (int i = len / 2 - 1; i >= 0; --i)
+            {
+                int prev_i = i;
+                i = add2pyramid(i, len);
+                if (prev_i != i) ++i;
+                
+            }
 
+            //step 2: сортировка
+            int buf;
+            for (int k = len - 1; k > 0; --k)
+            {
+                buf = ArrayM[0];
+                ArrayM[0] = ArrayM[k];
+                ArrayM[k] = buf;
+                int i = 0, prev_i = -1;
+                while (i != prev_i)
+                {
+                    prev_i = i;
+                    i = add2pyramid(i, k);
+                }
+            }
+        }
+        int add2pyramid(int i, int N)
+        {
+            int imax;
+            int buf;
+            if ((2 * i + 2) < N)
+            {
+                if (ArrayM[2 * i + 1] < ArrayM[2 * i + 2]) imax = 2 * i + 2;
+                else imax = 2 * i + 1;
+            }
+            else imax = 2 * i + 1;
+            if (imax >= N) return i;
+            if (ArrayM[i] < ArrayM[imax])
+            {
+                buf = ArrayM[i];
+                ArrayM[i] = ArrayM[imax];
+                ArrayM[imax] = buf;
+                if (imax < N / 2) i = imax;
+            }
+            return i;
+        }
         public void IntroSorting()
         {
             throw new NotImplementedException();
