@@ -42,6 +42,10 @@ namespace IntroSortLib
 
         public void PyramidalSorting()
         {
+            PyramidalSorting(0, ArrayM.Length - 1);
+        }
+        private void PyramidalSorting(int left, int right)
+        {
             int len = ArrayM.Length;
             //step 1: построение пирамиды
             for (int i = len / 2 - 1; i >= 0; --i)
