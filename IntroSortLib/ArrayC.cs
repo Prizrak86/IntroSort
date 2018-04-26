@@ -21,6 +21,7 @@ namespace IntroSortLib
                 array[i] = rns.Next(100);
             array.ln = Math.Log(size) * 2;
             this.ArrayM = array;
+            ArrayM.History.Add((int[])ArrayM.mass.Clone());
         }
 
         /// <summary>
@@ -28,6 +29,7 @@ namespace IntroSortLib
         /// </summary>
         public void BinarySorting()
         {
+            ArrayM.History.Clear();
             BinarySorting(0, ArrayM.mass.Length - 1);
         }
         /// <summary>
@@ -63,16 +65,19 @@ namespace IntroSortLib
             Array.Copy(leftArray, 0, ArrayM.mass, left, iLeft);
             Array.Copy(centerArray, 0, ArrayM.mass, left + iLeft, iCenter);
             Array.Copy(rightArray, 0, ArrayM.mass, left + iLeft + iCenter, iRight);
+
+            ArrayM.History.Add((int[])ArrayM.mass.Clone());
             #endregion
             ///рекурсивные вызовы для сортирвоки левого и правого диапазонов значений
-            if (iLeft > 1) BinarySorting(left, left + right - 1);
-            if (iRight > 1) BinarySorting(right - iRight + 1, right);
+            if (iLeft > 1) BinarySorting(left, left + right - 1, introSort);
+            if (iRight > 1) BinarySorting(right - iRight + 1, right, introSort);
         }
         /// <summary>
         /// Пирамидальная сортировка
         /// </summary>
         public void PyramidalSorting()
         {
+            ArrayM.History.Clear();
             PyramidalSorting(0, ArrayM.Length - 1);
         }
         /// <summary>
@@ -152,6 +157,7 @@ namespace IntroSortLib
                 buf = ArrayM[i + left];
                 ArrayM[i + left] = ArrayM[imax + left];
                 ArrayM[imax + left] = buf;
+                ArrayM.History.Add((int[])ArrayM.mass.Clone());
                 ///если дочерняя максимальная вершина лежит в первой половине пирамиды
                 ///то необходимо сообщить что ее нужно дальше сортировать
                 if (imax < size / 2)
@@ -164,6 +170,7 @@ namespace IntroSortLib
 
         public void IntroSorting()
         {
+            ArrayM.History.Clear();
             BinarySorting(0, ArrayM.mass.Length - 1, true);
         }
     }

@@ -42,9 +42,6 @@
     <Compile Include="ArrayC.cs" />
     <Compile Include="ArrayI.cs" />
     <Compile Include="ArrayM.cs" />
-    <Compile Include="HistoryC.cs" />
-    <Compile Include="HistoryI.cs" />
-    <Compile Include="HistoryM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

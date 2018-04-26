@@ -19,5 +19,7 @@ namespace IntroSortLib
             set { mass[ind] = value; }
         }
         public int Length { get { return mass.Length; } }
+
+        public List<int[]> History = new List<int[]>();
     }
 }
