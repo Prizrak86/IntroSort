@@ -19,6 +19,7 @@ namespace IntroSortLib
             Random rns = new Random();
             for (int i = 0; i < size; i++)
                 array[i] = rns.Next(100);
+            array.ln = Math.Log(size) * 2;
             this.ArrayM = array;
         }
 
@@ -34,10 +35,18 @@ namespace IntroSortLib
         /// </summary>
         /// <param name="left">левая граница сортируемого диапазона</param>
         /// <param name="right">правая граница сортируемого диапазона</param>
-        public void BinarySorting(int left, int right)
+        /// <param name="introSort">Если истина то применяет алгоритм "Интроспективная сортировка",
+        /// иначе (по умолчанию) применяет алгоритм бинарной сортировки</param>
+        private void BinarySorting(int left, int right, bool introSort = false)
         {
             ///вычисляем размер сортируемого диапазона
             int size = right - left + 1;
+            if (introSort && size <= ArrayM.ln)
+            {
+                PyramidalSorting(left, right);
+                return;
+            }
+
             int[] leftArray = new int[size];
             int[] centerArray = new int[size];
             int[] rightArray = new int[size];
@@ -122,7 +131,7 @@ namespace IntroSortLib
             if ((2 * i + 2) < size)
             {
                 ///если левый дочерний элемент меньше правого дочернего элемента
-                if (ArrayM[2 * i + 1 + left] < ArrayM[2 * i + 2 + left]) 
+                if (ArrayM[2 * i + 1 + left] < ArrayM[2 * i + 2 + left])
                     ///записать индекс правого дочернего элемента, максимальный по значению
                     imax = 2 * i + 2;
                 else
@@ -145,16 +154,17 @@ namespace IntroSortLib
                 ArrayM[imax + left] = buf;
                 ///если дочерняя максимальная вершина лежит в первой половине пирамиды
                 ///то необходимо сообщить что ее нужно дальше сортировать
-                if (imax < size / 2) 
+                if (imax < size / 2)
                     ///передача индекса следующего сортируемого элемента
                     ///которым являетися максимальный дочерний элемент
                     i = imax;
             }
             return i;
         }
+
         public void IntroSorting()
         {
-            throw new NotImplementedException();
+            BinarySorting(0, ArrayM.mass.Length - 1, true);
         }
     }
 }

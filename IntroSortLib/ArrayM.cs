@@ -8,6 +8,10 @@ namespace IntroSortLib
 {
     public class ArrayM
     {
+        /// <summary>
+        /// натуральный логорифм из количества элементов
+        /// </summary>
+        public double ln;
         public int[] mass;
         public int this[int ind]
         {
