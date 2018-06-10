@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace IntroSortLib
 {
+    
     public class ArrayM
     {
+        
         /// <summary>
         /// натуральный логорифм из количества элементов
         /// </summary>
@@ -19,7 +21,11 @@ namespace IntroSortLib
             set { mass[ind] = value; }
         }
         public int Length { get { return mass.Length; } }
-
-        public List<int[]> History = new List<int[]>();
+        public struct History
+        {
+            public int[] array;
+            public string commet;
+        }
+        public List<History> history = new List<History>();
     }
 }

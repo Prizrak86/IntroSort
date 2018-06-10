@@ -17,9 +17,10 @@ namespace ItroSort
             try
             {
                 arrayC = new ArrayC((int)numericUpDown1.Value);
-                button2.Enabled = true;
-                button3.Enabled = true;
-                button4.Enabled = true;
+                Intro.Enabled = true;
+                Binary.Enabled = true;
+                Pyramidal.Enabled = true;
+                UpData();
             }
             catch (Exception ex)
             {
@@ -29,10 +30,10 @@ namespace ItroSort
 
         private void UpData()
         {
-            listBox1.Items.Clear();
-            foreach (int[] item in arrayC.ArrayM.History)
+            table.Rows.Clear();
+            foreach (ArrayM.History history in arrayC.ArrayM.history)
             {
-                listBox1.Items.Add(string.Join(" ", item));
+                table.Rows.Add(history.commet, string.Join(" ", history.array));
             }
         }
 
@@ -42,6 +43,9 @@ namespace ItroSort
             {
                 arrayC.IntroSorting();
                 UpData();
+                Intro.Enabled = false;
+                Binary.Enabled = false;
+                Pyramidal.Enabled = false;
             }
             catch (Exception ex)
             {
@@ -55,6 +59,9 @@ namespace ItroSort
             {
                 arrayC.BinarySorting();
                 UpData();
+                Intro.Enabled = false;
+                Binary.Enabled = false;
+                Pyramidal.Enabled = false;
             }
             catch (Exception ex)
             {
@@ -68,6 +75,9 @@ namespace ItroSort
             {
                 arrayC.PyramidalSorting();
                 UpData();
+                Intro.Enabled = false;
+                Binary.Enabled = false;
+                Pyramidal.Enabled = false;
             }
             catch (Exception ex)
             {

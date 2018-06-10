@@ -21,7 +21,10 @@ namespace IntroSortLib
                 array[i] = rns.Next(100);
             array.ln = Math.Log(size) * 2;
             this.ArrayM = array;
-            ArrayM.History.Add((int[])ArrayM.mass.Clone());
+            ArrayM.History HistoryI = new ArrayM.History();
+            HistoryI.array = (int[])ArrayM.mass.Clone();
+            HistoryI.commet = "Создано множество";
+            ArrayM.history.Add(HistoryI);
         }
 
         /// <summary>
@@ -29,7 +32,6 @@ namespace IntroSortLib
         /// </summary>
         public void BinarySorting()
         {
-            ArrayM.History.Clear();
             BinarySorting(0, ArrayM.mass.Length - 1);
         }
         /// <summary>
@@ -66,18 +68,20 @@ namespace IntroSortLib
             Array.Copy(centerArray, 0, ArrayM.mass, left + iLeft, iCenter);
             Array.Copy(rightArray, 0, ArrayM.mass, left + iLeft + iCenter, iRight);
 
-            ArrayM.History.Add((int[])ArrayM.mass.Clone());
             #endregion
             ///рекурсивные вызовы для сортирвоки левого и правого диапазонов значений
-            if (iLeft > 1) BinarySorting(left, left + right - 1, introSort);
+            if (iLeft > 1) BinarySorting(left, left + iLeft, introSort);
             if (iRight > 1) BinarySorting(right - iRight + 1, right, introSort);
+            ArrayM.History HistoryI = new ArrayM.History();
+            HistoryI.array = (int[])ArrayM.mass.Clone();
+            HistoryI.commet = "Итерация бинарной сортировки";
+            ArrayM.history.Add(HistoryI);
         }
         /// <summary>
         /// Пирамидальная сортировка
         /// </summary>
         public void PyramidalSorting()
         {
-            ArrayM.History.Clear();
             PyramidalSorting(0, ArrayM.Length - 1);
         }
         /// <summary>
@@ -99,7 +103,10 @@ namespace IntroSortLib
                 if (prev_i != i) ++i;
             }
             #endregion
-
+            ArrayM.History HistoryI = new ArrayM.History();
+            HistoryI.array = (int[])ArrayM.mass.Clone();
+            HistoryI.commet = "Построена опорная пирамида";
+            ArrayM.history.Add(HistoryI);
             #region сортировка
             int buf;
             ///перебор неотсортированного диапазона
@@ -157,7 +164,10 @@ namespace IntroSortLib
                 buf = ArrayM[i + left];
                 ArrayM[i + left] = ArrayM[imax + left];
                 ArrayM[imax + left] = buf;
-                ArrayM.History.Add((int[])ArrayM.mass.Clone());
+                ArrayM.History HistoryI = new ArrayM.History();
+                HistoryI.array = (int[])ArrayM.mass.Clone();
+                HistoryI.commet = "Перестановка пирамидальной сортировки";
+                ArrayM.history.Add(HistoryI);
                 ///если дочерняя максимальная вершина лежит в первой половине пирамиды
                 ///то необходимо сообщить что ее нужно дальше сортировать
                 if (imax < size / 2)
@@ -170,7 +180,6 @@ namespace IntroSortLib
 
         public void IntroSorting()
         {
-            ArrayM.History.Clear();
             BinarySorting(0, ArrayM.mass.Length - 1, true);
         }
     }
